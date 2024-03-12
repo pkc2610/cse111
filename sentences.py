@@ -30,6 +30,15 @@ vpluralpres = ["drink", "eat", "grow", "laugh", "think", "run", "sleep", "talk",
 #"verbs plural future tense"
 vpluralfut = ["will drink", "will eat", "will grow", "will laugh", "will think", "will run", "will sleep", "will talk", "will walk", "will write"]
 
+#prepositions bb
+prepositions = [ "about", "above", "across", "after", "along", "around", "at", "before", "behind", "below", "beyond", "by", "despite", "except", "for", "from", "in", "into", "near", "of", "off", "on", "onto", "out", "over", "past", "to", "under", "with", "without"]
+
+#noun round 2
+noun2 = ["one child", "the car", "many rabbits", "the dog", "some cats", "many rabbits", "one cactus", "two cacti", "that tree", "the house", "many marbles", "the stock market"]
+
+#noun round 3
+noun3 = ["one child", "the car", "many rabbits", "the dog", "some cats", "many rabbits", "one cactus", "two cacti", "that tree", "the house", "many marbles", "the stock market"]
+
 def get_determiner(quantity):
 
     if quantity == 1:
@@ -58,12 +67,30 @@ def get_verb(quantity, tense):
         return random.choice(vpluralpres)
     elif quantity <= 1 and tense == "future":
         return random.choice(vpluralfut)
+    
+def get_preposition():
+    return random.choice(prepositions)
+
+def get_noun2():
+    return random.choice(noun2)
+
+def get_prep2():
+    return random.choice(prepositions)
+
+def get_noun3():
+    return random.choice(noun3)
 
 def make_sentence(quantity, tense):
     det = get_determiner(quantity)
     nou = get_noun(quantity)
+    prep = get_preposition()
+    nou2 = get_noun2()
     ver = get_verb(quantity, tense)
-    print(f"{det.capitalize()} {nou} {ver}.")
+    prep2 = get_prep2()
+    nou3 = get_noun3()
+
+    #blegh I organized this wrong but I need to go to the bathroom 
+    print(f"{det.capitalize()} {nou} {prep} {nou2} {ver} {prep2} {nou3}.")
 
 def main():
     quantity = int(input("How many people are in this sentence?"))
