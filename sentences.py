@@ -41,32 +41,44 @@ def get_determiner(quantity):
         return articless
     else: 
         return articlesp
-
-    word = random.choice(words)
-    return word
+    
+    word = random.choice(get_determiner)
 
 def get_noun(quantity):
 
     if quantity == 1:
-        nooun = ["bird", "boy", "car", "cat", "child",
-        "dog", "girl", "man", "rabbit", "woman"]
-    else: nooun = ["birds", "boys", "cars", "cats", "children",
-        "dogs", "girls", "men", "rabbits", "women"]
+        return nounss
+    else: 
+        return nounsp
 
-    noun = random.choice(nooun)
+    noun = random.choice(get_noun)
 
     return noun
 
 def get_verb(quantity, tense):
      
-    if quantity == 1:
-        verb = random.choice(verbsp)
-    else: 
-        verb = random.choice(verbspr)
-
-    return verb
+    if quantity == 1 & tense == "past":
+        return vsinglepast
+    elif quantity == 1 & tense == "present":
+        return vsinglepres
+    elif quantity == 1 & tense == "future":
+        return vsinglefut
+    elif quantity <= 1 & tense == "past":
+        return vpluralpast
+    elif quantity <= 1 & tense == "present":
+        return vpluralpres
+    elif quantity <= 1 & tense == "future":
+        return vpluralfut
+        verb = random.choice(get_verb)
+        return verb
 
 def make_sentence(quantity, tense):
     get_determiner()
     get_noun()
     get_verb()
+
+def main():
+    quantity=input("How many people are in this sentence?")
+    tense=input("Is this in the past, present, or future?")
+
+main()
