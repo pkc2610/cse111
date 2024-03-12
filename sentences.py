@@ -30,55 +30,44 @@ vpluralpres = ["drink", "eat", "grow", "laugh", "think", "run", "sleep", "talk",
 #"verbs plural future tense"
 vpluralfut = ["will drink", "will eat", "will grow", "will laugh", "will think", "will run", "will sleep", "will talk", "will walk", "will write"]
 
-
-word = random.choice(articless, articlesp)
-
-cap_word = word.capitalize()
-
 def get_determiner(quantity):
 
     if quantity == 1:
-        return articless
+        return random.choice(articless)
     else: 
-        return articlesp
-    
-    word = random.choice(get_determiner)
+        return random.choice(articlesp)
 
 def get_noun(quantity):
 
     if quantity == 1:
-        return nounss
+        return random.choice(nounss)
     else: 
-        return nounsp
-
-    noun = random.choice(get_noun)
-
-    return noun
+        return random.choice(nounsp)
 
 def get_verb(quantity, tense):
      
-    if quantity == 1 & tense == "past":
-        return vsinglepast
-    elif quantity == 1 & tense == "present":
-        return vsinglepres
-    elif quantity == 1 & tense == "future":
-        return vsinglefut
-    elif quantity <= 1 & tense == "past":
-        return vpluralpast
-    elif quantity <= 1 & tense == "present":
-        return vpluralpres
-    elif quantity <= 1 & tense == "future":
-        return vpluralfut
-        verb = random.choice(get_verb)
-        return verb
+    if quantity == 1 and tense == "past":
+        return random.choice(vsinglepast)
+    elif quantity == 1 and tense == "present":
+        return random.choice(vsinglepres)
+    elif quantity == 1 and tense == "future":
+        return random.choice(vsinglefut)
+    elif quantity <= 1 and tense == "past":
+        return random.choice(vpluralpast)
+    elif quantity <= 1 and tense == "present":
+        return random.choice(vpluralpres)
+    elif quantity <= 1 and tense == "future":
+        return random.choice(vpluralfut)
 
 def make_sentence(quantity, tense):
-    get_determiner()
-    get_noun()
-    get_verb()
+    det = get_determiner(quantity)
+    nou = get_noun(quantity)
+    ver = get_verb(quantity, tense)
+    print(f"{det.capitalize()} {nou} {ver}.")
 
 def main():
-    quantity=input("How many people are in this sentence?")
+    quantity = int(input("How many people are in this sentence?"))
     tense=input("Is this in the past, present, or future?")
+    make_sentence(quantity, tense)
 
 main()
