@@ -1,13 +1,7 @@
 from formula import parse_formula
 
-def main():
-
-    chem_form = input("Put your chemical formula for the molecule in: ")
-    mass_chem_sam = input("Enter the mass of the sample in grams: ")
-
-
 def make_periodic_table():
-     return {
+    return {
     "Al":	["Aluminum",	26.9815386],
     "Ac":	["Actinium",	227],
     "Ag":	["Silver",	107.8682],
@@ -114,6 +108,10 @@ QUANTITY_INDEX = 1
 
 
 def compute_molar_mass(symbol_quantity_list, periodic_table_dict):
+    total = 0
+    for i in symbol_quantity_list:
+        total += periodic_table_dict[i[0]][1] * i[1]
+    return total
     """Compute and return the total molar mass of all the
     elements listed in symbol_quantity_list.
 
@@ -141,13 +139,24 @@ def compute_molar_mass(symbol_quantity_list, periodic_table_dict):
         # Add the product into the total molar mass.
 
     # Return the total molar mass.
-    return
 
+def main():
 
-m_p_t = make_periodic_table()
+    chem_form = input("Put your chemical formula for the molecule in: ")
+    mass_chem_sam = input("Enter the mass of the sample in grams: ")
 
-for i in m_p_t:
-     print(f"{[i[1]]} {[i[2]]}")
+    m_p_t = make_periodic_table()
+
+    for i,j in m_p_t.items():
+        print(f"{i}: {j}")
+
+    formula_parsed = parse_formula(chem_form, m_p_t)
+
+    mol_mass = compute_molar_mass()
+
+    print(mol_mass)
+
+    print(formula_parsed)
     
 
 main()
