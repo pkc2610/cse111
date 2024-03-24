@@ -106,6 +106,11 @@ ATOMIC_MASS_INDEX = 1
 SYMBOL_INDEX = 0
 QUANTITY_INDEX = 1
 
+periodic_table_dict = make_periodic_table()
+
+symbol_quantity_list = parse_formula()
+
+
 
 def compute_molar_mass(symbol_quantity_list, periodic_table_dict):
     total = 0
@@ -152,11 +157,11 @@ def main():
 
     formula_parsed = parse_formula(chem_form, m_p_t)
 
-    mol_mass = compute_molar_mass()
+    mol_mass = compute_molar_mass(symbol_quantity_list, periodic_table_dict)
 
     print(mol_mass)
 
     print(formula_parsed)
     
 
-main()
+main(symbol_quantity_list, periodic_table_dict)
