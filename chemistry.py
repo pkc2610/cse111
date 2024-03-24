@@ -1,6 +1,8 @@
+from formula import parse_formula
+
 def main():
 
-    chem_form = input("Put your chemical formula in: ")
+    chem_form = input("Put your chemical formula for the molecule in: ")
     mass_chem_sam = input("Enter the mass of the sample in grams: ")
 
     def make_periodic_table():
@@ -105,5 +107,8 @@ def main():
 
     for i in m_p_t:
      print(f"{[i[1]]} {[i[2]]}")
+    
+    def compute_molar_mass():
+      
 
 main()

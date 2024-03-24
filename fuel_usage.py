@@ -1,5 +1,3 @@
-
-
 def main():
     odo1=float(input("Enter the first odometer reading (in miles): "))
 
