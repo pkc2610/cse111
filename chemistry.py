@@ -19,7 +19,6 @@ def make_periodic_table():
     "Cd":	["Cadmium",	112.411],
     "Ce":	["Cerium",	140.116],
     "Cl":	["Chlorine",	35.453],
-    "Co":	["Cobalt",	58.933195],
     "Cr":	["Chromium",	51.9961],
     "Cs":	["Cesium",	132.9054519],
     "Cu":	["Copper",	63.546],
@@ -106,10 +105,11 @@ ATOMIC_MASS_INDEX = 1
 SYMBOL_INDEX = 0
 QUANTITY_INDEX = 1
 
+formula = input("What is your formula?")
+
 periodic_table_dict = make_periodic_table()
 
-symbol_quantity_list = parse_formula()
-
+symbol_quantity_list = parse_formula(formula, periodic_table_dict)
 
 
 def compute_molar_mass(symbol_quantity_list, periodic_table_dict):
