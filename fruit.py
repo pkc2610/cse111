@@ -4,4 +4,24 @@ def main():
     print(f"original: {fruit_list}")
 
     fruit_list.reverse()
-    
+    print(f"reversed: {fruit_list}")
+
+    fruit_list.append("orange")
+    print(f"append orange: {fruit_list}")
+
+    fruit_list.insert(2, "cherry")
+    print(f"insert cherry: {fruit_list}")
+
+    fruit_list.remove("banana")
+    print(f"remove banana: {fruit_list}")
+
+    fruit_list.pop(4)
+    print(f"pop orange: {fruit_list}")
+
+    fruit_list.sort()
+    print(f"sorted: {fruit_list}")
+
+    fruit_list.clear()
+    print(f"cleared: {fruit_list}")
+
+main()
