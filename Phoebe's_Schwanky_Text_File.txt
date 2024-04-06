@@ -1,0 +1,21 @@
+Instead of having a separate txt or csv file, I found that I liked having the list out in front of me;
+and me being who I am, I didn't think a list of less than 20 things needed a separate txt file. Should
+the list get long enough, I'd probably make it into a csv file
+
+
+Time: I fiddled with a few different list formats and made a few different lists to see which ones I like most, 
+and while I spent a good amount of time on it, I can't say I spent much more than about six hours on this.
+
+Organization: here's a list of the functions I'm planning on using (this might change over time):
+-print_og_list: this will print the list as it is before we make any changes
+-new_task: this will append a string to the end of the list and print the list with the appended item
+-no_more_task: this will remove a string from the list and print the updated list
+-sort_them_all: this will sort the items, then print the list now that it's been organized
+
+Progress: I've got the basic flow of interacting with this to-do list down. I'd say I'm about a third of the way there!
+
+Description: 
+-I haven't fleshed out my test code yet, but I'm planning on primarily using assert functions.
+-I reread this week and Week 3's preparation information, as well as some help articles written by 
+W3Schools, TutorialsPoint, and Python Docs. Next on my list is rereading Week 4's preparation information 
+and going over Github and Python's documentation so I can be sure I have a handle on what I'm doing.
