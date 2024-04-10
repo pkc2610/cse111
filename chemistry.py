@@ -105,7 +105,7 @@ ATOMIC_MASS_INDEX = 1
 SYMBOL_INDEX = 0
 QUANTITY_INDEX = 1
 
-formula = input("What is your formula?")
+formula = input("What is your formula? ")
 
 periodic_table_dict = make_periodic_table()
 
@@ -145,23 +145,23 @@ def compute_molar_mass(symbol_quantity_list, periodic_table_dict):
 
     # Return the total molar mass.
 
-def main():
+def main(symbol_quantity_list, periodic_table_dict):
 
     chem_form = input("Put your chemical formula for the molecule in: ")
     mass_chem_sam = input("Enter the mass of the sample in grams: ")
 
     m_p_t = make_periodic_table()
 
-    for i,j in m_p_t.items():
-        print(f"{i}: {j}")
+   # for i,j in m_p_t.items():
+   #     print(f"{i}: {j}")
 
     formula_parsed = parse_formula(chem_form, m_p_t)
 
     mol_mass = compute_molar_mass(symbol_quantity_list, periodic_table_dict)
 
-    print(mol_mass)
+    print(f"{mol_mass} grams/mole")
 
-    print(formula_parsed)
+   # print(formula_parsed)
     
 
 main(symbol_quantity_list, periodic_table_dict)
